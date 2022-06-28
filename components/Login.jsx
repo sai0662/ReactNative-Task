@@ -26,13 +26,29 @@ export default function Login({navigation}) {
 
   // const [userMail, setuserMail] = useState("");
   // const [password, setPassword] = useState("");
+
+
+
+  const isValidEmail = (val)=>{
+    const regx = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    return regx.test(val)
+  }
+  const isValidPassword = (val)=>{
+    const regx = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+    return regx.test(val)
+  }
  
   const submit = (email,password) =>{
-    if(email === "saiteja" && password === "123456")  {
+    if(email === "sait0662@gmail.com" && password === "Psaiteja@123")  {
       navigation.navigate("Dashboard");
     }else{
       Alert.alert("enter valid mail or password")
     }
+
+    // if(!isValidEmail(email))
+    // {
+    //   return  Alert.alert("enter valid mail or password")
+    // }
   };
 
   const [data,setData] = React.useState({
@@ -45,7 +61,8 @@ export default function Login({navigation}) {
   }) 
 
   const textInputChange = (val) =>{
-    if(val.trim().length >= 4){
+    // if(val.trim().length >= 4){
+      if(isValidEmail(val)){
       setData({
         ...data,
         email:val,
@@ -63,7 +80,8 @@ export default function Login({navigation}) {
   }
 
   const handlePasswordChange = (val) =>{
-    if(val.trim().length >= 6){
+    // if(val.trim().length >= 6){
+      if(isValidPassword(val)){
       setData({
         ...data,
         password:val,
@@ -144,13 +162,13 @@ export default function Login({navigation}) {
               style={styles.input}  
               placeholder="Password"
               autoCapitalize="none"
-              secureTextEntry={true}
+             // secureTextEntry={true}
              onChangeText = {(val)=> handlePasswordChange(val)}
             
             />
            
             {data.isValidPassword ? null :
-        <Text style={{color:'red'}}>password must be 6 characters long</Text>
+        <Text style={{color:'red'}}>password must be 8 characters  and 1 Uppercase and 1 Special character and 1 Number should be there</Text>
             }
             <View style={{ padding: 5, alignItems: "flex-end" }}>
               <Text style={{ padding: 8 }}>Forgot Password?</Text>
