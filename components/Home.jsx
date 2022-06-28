@@ -72,7 +72,7 @@ export default function Home({navigation}) {
           <View style={{ padding: 30, paddingLeft: 40 }}>
             <Text
               style={{ color: "orange" }}
-              onPress={() => navigation.navigate("Register")}
+              onPress={() => navigation.navigate("Signup")}
             >
               <Text style={{ color: "white" }}>New to The Beer Store? </Text>
               Create an account
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
     padding: 14,
     borderRadius: 10,
   },
-});
+}); 

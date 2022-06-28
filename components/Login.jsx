@@ -162,7 +162,7 @@ export default function Login({navigation}) {
               style={styles.input}  
               placeholder="Password"
               autoCapitalize="none"
-             // secureTextEntry={true}
+              secureTextEntry={true}
              onChangeText = {(val)=> handlePasswordChange(val)}
             
             />
