@@ -45,6 +45,15 @@ export default function Login({navigation}) {
       Alert.alert("enter valid mail or password")
     }
 
+    // if(!inputs.email){
+    //         handleError('Please input email', 'email');
+    //         valid=false;
+    
+    //     }else if(!inputs.email.match(/\S+@\S+\.\S+/)){
+    //       handleError('Please input email', 'email');
+    //     }
+
+    
     // if(!isValidEmail(email))
     // {
     //   return  Alert.alert("enter valid mail or password")
